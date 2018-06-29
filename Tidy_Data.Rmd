@@ -39,14 +39,18 @@ ipack(packs)
 ## Base de datos
 
 ```{r pressure, echo=FALSE}
-datos<-read.delim("original_database.txt",sep="|")
+s.datos<-read.delim("Solar_Database.txt",sep="|")
+w.datos<-read.delim("Wind_Database.txt",sep="|")
 ```
 
 
 ## Tidy
 ```{r}
-datos<-datos %>% dplyr::select(Country.or.Area,Year,Unit,Quantity)
-colnames(datos)<-c("c","y","unit","q")
+s.datos<-s.datos %>% dplyr::select(Country.or.Area,Year,Unit,Quantity)
+colnames(s.datos)<-c("c","y","unit","q")
+
+w.datos<-w.datos %>% dplyr::select(Country.or.Area,Year,Unit,Quantity)
+colnames(w.datos)<-c("c","y","unit","q")
 ```
 
 
