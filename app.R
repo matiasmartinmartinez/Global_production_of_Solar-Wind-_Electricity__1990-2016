@@ -18,10 +18,10 @@ ipack(packs)
 #Bases de datos
 load("Database.RData")
 
-ui <- fluidPage(
+ui <- fluidPage(theme = shinytheme("journal"),
    
    
-   titlePanel("Global production of Solar-Wind Electricity,  1990-2016"),
+   titlePanel(h2("Global production of Solar-Wind Electricity,  1990-2016")),
 
    tabsetPanel(
   
@@ -68,7 +68,8 @@ ui <- fluidPage(
 server <- function(input, output) {
   
                                                                   #TIME SERIES
-  timeseriesbaseInput<-reactive({ input$timeseriescountry  })
+  timeseriesbaseInput<-reactive({  get (input$timeseriesbase) })
+  timeseriescountryInput<-reactive({ input$timeseriescountry})
   
   output$timeseries<-renderPlotly({
     
@@ -76,9 +77,9 @@ server <- function(input, output) {
     
     
     
-    if(is.null(timeseriesbaseInput() ))
+    if(is.null(timeseriescountryInput() ))
     {
-      ggplotly( w.datos %>%
+      ggplotly( timeseriesbaseInput() %>%
                   ggplot( aes(y,q) )+
                   geom_line(aes(group=c))+
                   labs(x="Years",y="Quantity in Kilowatt-hours, million")+
@@ -89,7 +90,7 @@ server <- function(input, output) {
       #selecciona un país
     {
     
-    ggplotly( w.datos %>% filter( c%in%timeseriesbaseInput() ) %>%
+    ggplotly( timeseriesbaseInput() %>% filter( c%in%timeseriescountryInput() ) %>%
                ggplot( aes(y,q) )+
                geom_line(aes(group=c))+
                 labs(x="Years",y="Quantity in Kilowatt-hours, million")
