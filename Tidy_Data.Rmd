@@ -1,0 +1,54 @@
+---
+title: "Tidy_Data"
+author: "Martínez Matías"
+date: "29 de junio de 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Librerías
+
+Función que instala y carga paquetes necesarios para correr el código.
+
+```{r}
+ipack <- function( pkg )
+  
+  {
+  new.pkg <-  pkg[ ! (pkg %in% installed.packages()[, "Pac
+                                                    kage"]) ]
+  if ( length(new.pkg) ) 
+    install.packages(
+      new.pkg, dependencies = TRUE )
+  sapply( pkg, require, character.only = TRUE )
+  }
+
+
+packs<- c( "tidyverse", "rmarkdown","xml2","ggmosaic",
+           "plotly", "ggmap", "raster", "rgdal",
+           "knitr", "scales", "lubridate", "devtools",
+           "grid", "gridExtra", "shiny","shinythemes")
+
+ipack(packs)
+```
+
+
+
+## Base de datos
+
+```{r pressure, echo=FALSE}
+datos<-read.delim("original_database.txt",sep="|")
+```
+
+
+## Tidy
+```{r}
+datos<-datos %>% dplyr::select(Country.or.Area,Year,Unit,Quantity)
+colnames(datos)<-c("c","y","unit","q")
+```
+
+
+
+
