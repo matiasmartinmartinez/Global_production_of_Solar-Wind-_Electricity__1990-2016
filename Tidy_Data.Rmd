@@ -17,8 +17,7 @@ Función que instala y carga paquetes necesarios para correr el código.
 ipack <- function( pkg )
   
   {
-  new.pkg <-  pkg[ ! (pkg %in% installed.packages()[, "Pac
-                                                    kage"]) ]
+  new.pkg <-  pkg[ ! (pkg %in% installed.packages()[, "Package"]) ]
   if ( length(new.pkg) ) 
     install.packages(
       new.pkg, dependencies = TRUE )
@@ -51,6 +50,8 @@ colnames(s.datos)<-c("c","y","unit","q")
 
 w.datos<-w.datos %>% dplyr::select(Country.or.Area,Year,Unit,Quantity)
 colnames(w.datos)<-c("c","y","unit","q")
+
+
 ```
 
 
