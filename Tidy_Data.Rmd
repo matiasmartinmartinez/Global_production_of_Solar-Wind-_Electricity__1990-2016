@@ -56,7 +56,15 @@ colnames(w.datos)<-c("c","y","unit","q")
 
 ## Introduccion
 
-Se pretende conocer el comportamiento en la produccion de energia solar y eolica a nivel global mediante visualizaciones interactivas que permitan al usuario una experiencia mas amena. Se centrara en el uso de shiny, ya que el objetivo fundamental es su correcta aplicacion.
+Se pretende conocer el comportamiento en la produccion de energia solar y eolica a nivel global mediante visualizaciones interactivas que permitan al usuario una experiencia mas amena. Se centrara en el uso de shiny, ya que es de interes fundamental en dicho analisis estadistico su funcional y acorde aplicacion.
+
+## Justificacion
+
+El objetivo fundamental es la aplicacion de nuevos metodos estadisticos de visualizaccion, profundizando en su correcta implementacion y con gran interes en la captacion de experiencia y nuevos conocimientos en areas de visualizacion y uso del entorno estadistico R.
+
+
+
+
 
 
 
