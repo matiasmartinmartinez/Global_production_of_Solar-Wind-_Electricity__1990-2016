@@ -54,6 +54,9 @@ colnames(w.datos)<-c("c","y","unit","q")
 
 ```
 
+## Introduccion
+
+Se pretende conocer el comportamiento en la produccion de energia solar y eolica a nivel global mediante visualizaciones interactivas que permitan al usuario una experiencia mas amena. Se centrara en el uso de shiny, ya que el objetivo fundamental es su correcta aplicacion.
 
 
 
