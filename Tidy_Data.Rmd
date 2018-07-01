@@ -62,6 +62,17 @@ Se pretende conocer el comportamiento en la produccion de energia solar y eolica
 
 El objetivo fundamental es la aplicacion de nuevos metodos estadisticos de visualizaccion, profundizando en su correcta implementacion y con gran interes en la captacion de experiencia y nuevos conocimientos en areas de visualizacion y uso del entorno estadistico R.
 
+## Preguntas a responder
+
+- Que comportamiento posee la produccion de energia solar y eolica para el periodo dado?
+- Cual es la media para ambos tipos de energias y que paises superan la misma?
+- 
+
+## Hipotesis
+
+- Dada la concientizacion con el medio ambiente, los paises con mayor IDH generan la mayor produccion de tales energias.
+
+
 
 
 
