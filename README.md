@@ -2,6 +2,6 @@
 
 **Resumen:**
 
-El siguiente informe posee como objetivo primario conocer la realidad mundial en cuanto a la producción de energía solar y eólica para cada país, además de aplicar visualizaciones interactivas mediante ***shiny***.
+El siguiente breve informe posee como objetivo primario conocer la realidad mundial en cuanto a la producción de energía solar y eólica para cada país, además de aplicar visualizaciones interactivas mediante ***shiny***.
 
 *Gracias por tu atención.*
