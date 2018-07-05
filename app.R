@@ -42,7 +42,8 @@ ui <- fluidPage(theme = shinytheme("journal"),
                          "Wind"="w.datos")),
            
            selectInput("timeseriescountry", "Choise country:",
-                              choices = c(names( table(s.datos$c) )  ),multiple = T  )
+                              choices = c(names( table(s.datos$c) )  ),multiple = T  ),
+           checkboxInput("timeseriesmean","Mean")
          
         ), #sidebarPanel
        
@@ -70,11 +71,13 @@ server <- function(input, output) {
                                                                   #TIME SERIES
   timeseriesbaseInput<-reactive({  get (input$timeseriesbase) })
   timeseriescountryInput<-reactive({ input$timeseriescountry})
+  timeseriesmeanInput<-reactive({ input$timeseriesmean })
   
   output$timeseries<-renderPlotly({
     
     
-    
+  if (timeseriesmeanInput()==F)  {
+    #NO MARCA MEDIA
     
     
     if(is.null(timeseriescountryInput() ))
@@ -97,7 +100,42 @@ server <- function(input, output) {
               
               )
     }#else is.null(timeseriesbase)
+  } #mean
     
+    
+    
+    
+    
+    else
+       #MARCA MEDIA
+    {
+      
+      
+      if(is.null(timeseriescountryInput() ))
+      {
+        ggplotly( timeseriesbaseInput() %>%
+                    ggplot( aes(y,q) )+
+                    geom_line(aes(group=c))+
+                    labs(x="Years",y="Quantity in Kilowatt-hours, million")+
+                    theme_minimal() + 
+                    stat_summary_bin(aes(y = q), fun.y = "mean", geom = "line",colour="red",cex=1.2)
+        )
+      }
+      else
+        #selecciona un país
+      {
+        
+        ggplotly( timeseriesbaseInput() %>% filter( c%in%timeseriescountryInput() ) %>%
+                    ggplot( aes(y,q) )+
+                    geom_line(aes(group=c))+
+                    labs(x="Years",y="Quantity in Kilowatt-hours, million")+
+                    stat_summary_bin(aes(y = q), fun.y = "mean", geom = "line",colour="red",cex=1.2)
+                  
+        )
+      }#else is.null(timeseriesbase)
+   
+      
+       }#else marca media
   })#renderPlotly
   
   
