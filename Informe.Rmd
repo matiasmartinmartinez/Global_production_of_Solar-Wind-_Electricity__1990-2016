@@ -9,27 +9,31 @@ output: html_document
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Introduccion
+## Introducción
 
-Se pretende conocer el comportamiento en la produccion de energia solar y eolica a nivel global mediante visualizaciones interactivas que permitan al usuario una experiencia mas amena. Se centrara en el uso de shiny, ya que es de interes fundamental en dicho analisis estadistico su funcional y acorde aplicacion.
+Se pretende conocer el comportamiento en la producción de energía solar y eólica a nivel global mediante visualizaciones interactivas que permitan al usuario una experiencia mas amena. Se centrara en el uso de shiny, ya que es de interés fundamental en dicho análisis estadístico su funcional y acorde aplicación.
 
-### Justificacion
+### Justificación
 
-El objetivo fundamental es la aplicacion de nuevos metodos estadisticos de visualizaccion, profundizando en su correcta implementacion y con gran interes en la captacion de experiencia y nuevos conocimientos en areas de visualizacion y uso del entorno estadistico R.
+El objetivo fundamental es la aplicación de nuevos métodos estadísticos de visualización, profundizando en su correcta implementación y con gran interés en la captación de experiencia y nuevos conocimientos en áreas de visualización y uso del entorno estadístico R.
 
 ### Preguntas a responder
 
-- Que comportamiento posee la produccion de energia solar y eolica para el periodo dado?
-- Cual es la media para ambos tipos de energias y que paises superan la misma?
+- ¿Qué comportamiento posee la producción de energía solar y eólica para el periodo dado?
+- ¿Cuál es la media para ambos tipos de energías y que países superan la misma?
 - 
 
-### Hipotesis
 
-- Dada la concientizacion con el medio ambiente, los paises con mayor IDH generan la mayor produccion de tales energias.
 
-- Los anteriormente mencionados superan ampliamente la media de produccion de manera constante en el transcurso de los anios.
+### Hipótesis
 
-## Marco Teorico
+- Dada la concientización con el medio ambiente, los países con mayor IDH generan la mayor producción de tales energías.
+
+- Los anteriormente mencionados superan ampliamente la media de producción de manera constante en el transcurso de los años.
+
+
+
+## Marco Teórico
 
 
 ### Fuente de datos
@@ -38,9 +42,9 @@ El objetivo fundamental es la aplicacion de nuevos metodos estadisticos de visua
 ### Base de datos
 
 
-### Descripcion de las variables
+### Descripción de las variables
 
-### Nomeclatura estadistica
+### Nomenclatura estadística
 
 
 
